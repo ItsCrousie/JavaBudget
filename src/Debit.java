@@ -1,6 +1,10 @@
 
 import java.math.BigDecimal;
 
+/**
+ * @author Brian Crouse
+ */
+
 public class Debit {
     private String name;
     private BigDecimal value;
