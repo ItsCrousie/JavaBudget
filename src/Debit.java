@@ -25,7 +25,7 @@ public class Debit {
     }
 
     public void setName (String name) {
-        if (name.contains("^[a-zA-z\\s]")) {
+        if (!name.contains("[a-zA-z\\s]+")) {
             throw new IllegalArgumentException("Name must only contain letters and whitespace.");
         }
         this.name = name;
