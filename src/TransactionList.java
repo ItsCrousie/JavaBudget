@@ -1,23 +1,41 @@
+import java.util.ArrayList;
 import java.math.BigDecimal;
 
 public class TransactionList {
-    public static void TransactionList() {
-        
+    private ArrayList<Transaction> transactions;
+
+    public TransactionList() {
+        transactions = new ArrayList<Transaction>();
     }
 
-    public void getTransaction() {
-
+    public Transaction getTransaction(int index) {
+        if (index < 0 || index >= transactions.size()) {
+            throw new IllegalArgumentException("Index out of bounds");
+        }
+        return transactions.get(index);
     }
     
-    public void addTransaction() {
-
+    public void addTransaction(Transaction t) {
+        if (!(t instanceof Transaction)) {
+            throw new IllegalArgumentException("t is not a Transaction");
+        }
+        else {
+            transactions.add(t);
+        }
     }
 
-    public void removeTransaction() {
-
+    public void removeTransaction(int index) {
+        if (index < 0 || index >= transactions.size()) {
+            throw new IllegalArgumentException("Index out of bounds");
+        }
+        transactions.remove(index);
     }
 
     public String displayTransactionList() {
-        //iterate over transactions
+        String transactionListString = "";
+        for (Transaction t : transactions) {
+            transactionListString += t.displayTransaction() + "\n";
+        }
+        return transactionListString;
     }
 }

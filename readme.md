@@ -62,5 +62,4 @@ Say goodbye to confusing Venmo requests and awkward end-of-month math—JavaBudg
 To compile and run the app locally:
 
 ```bash
-javac *.java
-java App
+./test.sh
