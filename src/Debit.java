@@ -9,12 +9,12 @@ public class Debit {
     private String name;
     private BigDecimal value;
 
-    public Debit (String name, BigDecimal value) {
+    public Debit(String name, BigDecimal value) {
         setName(name);
         setValue(value);
     }
     
-    public String getName () {
+    public String getName() {
         return name;
     }
 
@@ -22,26 +22,26 @@ public class Debit {
         return value;
     }
 
-    public void setName (String name) {
+    public void setName(String name) {
         if (!name.matches("[a-zA-Z\\s]+")) {
             throw new IllegalArgumentException("Name must only contain letters and whitespace.");
         }
         this.name = name;
     }
 
-    public void setValue (BigDecimal value) {
+    public void setValue(BigDecimal value) {
         //Check if value is greater than 0
         if (value.compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("Value must be positive and greater than 0."); 
         }
         //Check if value is rounded to two decimal places
         if (value.scale() > 2) {
-            throw new IllegalArgumentException("Value must be rounded to nearest cent");
+            throw new IllegalArgumentException("Value must be rounded to nearest cent.");
         }
         this.value = value;
     }
 
-    public String displayDebitInfo () {
+    public String displayDebitInfo() {
         return "Name: " + getName() + " Value: $" + getValue();
     } 
 }
