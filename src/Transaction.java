@@ -5,11 +5,11 @@ import java.math.BigDecimal;
  * @author Brian Crouse
  */
 
-public class Debit {
+public class Transaction {
     private String name;
     private BigDecimal value;
 
-    public Debit(String name, BigDecimal value) {
+    public Transaction(String name, BigDecimal value) {
         setName(name);
         setValue(value);
     }
@@ -41,7 +41,7 @@ public class Debit {
         this.value = value;
     }
 
-    public String displayDebitInfo() {
+    public String displayTransaction() {
         return "Name: " + getName() + " Value: $" + getValue();
     } 
 }
