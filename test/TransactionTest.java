@@ -10,7 +10,6 @@ import java.math.BigDecimal;
  */
 
 public class TransactionTest {
-    
     @Test
     public void testConstructorPreConditions() {
         // Check input validation for name

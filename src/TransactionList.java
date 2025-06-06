@@ -31,6 +31,10 @@ public class TransactionList {
         transactions.remove(index);
     }
 
+    public int getTransactionCount() {
+        return transactions.size();
+    }
+
     public String displayTransactionList() {
         String transactionListString = "";
         for (Transaction t : transactions) {
