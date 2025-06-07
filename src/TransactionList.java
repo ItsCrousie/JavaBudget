@@ -16,12 +16,7 @@ public class TransactionList {
     }
     
     public void addTransaction(Transaction t) {
-        if (!(t instanceof Transaction)) {
-            throw new IllegalArgumentException("t is not a Transaction");
-        }
-        else {
-            transactions.add(t);
-        }
+        transactions.add(t);
     }
 
     public void removeTransaction(int index) {
@@ -34,6 +29,11 @@ public class TransactionList {
     public int getTransactionCount() {
         return transactions.size();
     }
+
+    // TODO:
+    // public BigDecimal getTransactionListTotal() {
+
+    // }
 
     public String displayTransactionList() {
         String transactionListString = "";

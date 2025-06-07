@@ -1,3 +1,4 @@
+import com.sun.source.doctree.IdentifierTree;
 import jdk.jfr.Timestamp;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,23 +13,47 @@ public class TransactionListTest {
     //     String id = "TransactionList initiated as an empty ArrayList of transactions";
     //     assertTrue(transactionList. instanceof ArrayList, id);
     // }
-
+    
+    //Setup a TransactionList
     @Test
-    // TODO: Fix
     public void testAddTransaction() {
-        TransactionList t = new TransactionList();
-        String id = "Test addTransaction throws IllegalArgumentException if arg is not a Transaction";
-        Exception e = assertThrows(IllegalArgumentException.class, () -> {
-                t.add("Blah Blah");
-            });
-        assertEquals("t is not a Transaction", e.getMessage(), id);
+        String id = "Add transaction successfully adds different transactions";
+        // Consider adding Set-ish behavior to prevent duplicates.
+        // 💭Although duplicates are rare they might occur and that's ok
+        TransactionList tl = new TransactionList();
+        Transaction t1 = new Transaction("Aldi", new BigDecimal("10.00")); 
+        Transaction t2 = new Transaction("Food Lion", new BigDecimal("11.42")); 
+        Transaction t3 = new Transaction("BJs", new BigDecimal("459.94")); 
+        
+        tl.addTransaction(t1);
+        tl.addTransaction(t2);
+        tl.addTransaction(t3);
+
+        int exp = 3;
+        int act = tl.getTransactionCount();
+        assertEquals(exp, act, id);
     }
 
-    // TODO: getTransaction
+//     // TODO: getTransaction
+//     @Test
+//     public void testGetTransaction() {
 
-    // TODO: removeTransaction
+//     }
 
-    // TODO: getTransactionCount
+//     // TODO: removeTransaction
+//     @Test
+//     public void testRemoveTransaction() {
+
+//     }
+
+//     // TODO: getTransactionCount
+//     @Test
+//     public void testGetTransactionCount() {
+//     }
     
-    // TODO: displayTransactionList
+//     // TODO: displayTransactionList
+//     @Test
+//     public void testDisplayTransactionList() {
+        
+//     }
 }
