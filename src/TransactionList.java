@@ -30,10 +30,15 @@ public class TransactionList {
         return transactions.size();
     }
 
-    // TODO:
-    // public BigDecimal getTransactionListTotal() {
-
-    // }
+    public BigDecimal getTransactionListTotal() {
+        BigDecimal total = new BigDecimal("0.00");
+       
+        for (Transaction t : transactions) {
+            total = total.add(t.getValue());
+        }
+        
+        return total;
+    }
 
     public String displayTransactionList() {
         String transactionListString = "";
