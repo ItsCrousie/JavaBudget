@@ -76,6 +76,7 @@ public class TransactionListTest {
         //Remove one element and retest:
         tl.removeTransaction(0);
         exp = 2;
+        act = tl.getTransactionCount();
         assertEquals(exp, act, id);
 
         //Add two elemets and retest:
@@ -84,12 +85,14 @@ public class TransactionListTest {
         tl.addTransaction(addedTransaction1);
         tl.addTransaction(addedTransaction2);
         exp = 4;
+        act = tl.getTransactionCount();
         assertEquals(exp, act, id);
     }
 
     @Test
     public void testGetTransactionListTotal() {
         id = "Test getTransactionListTotal returns the correct total";
+        // This total is handcalculated from what's in setUp.
         BigDecimal exp = new BigDecimal("481.36");
         BigDecimal act = tl.getTransactionListTotal();
         assertEquals(exp, act, id);
