@@ -65,7 +65,6 @@ public class TransactionListTest {
         assertEquals(tl.getTransaction(0).getValue(), exp.getValue(), id);
     }
 
-    // FIX: getTransactionCount
     @Test
     public void testGetTransactionCount() {
         id = "Check that getTransactionCount returns the correct count";
